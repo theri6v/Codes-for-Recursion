@@ -1,0 +1,59 @@
+On this page we will learn to create Python Program to calculate Length of the String using Recursion as well as Loop.
+
+Note : That the given program counts any spaces present in string. For example, length of “Hi” is 2 but length of ” Hi” or “Hi ” is 3.
+
+Example :
+
+Input : PrepInsta
+Output : length of PrepInsta is 9
+Explanation : Length of PrepInsta is 9 as it has 9 characters in PrepInsta
+Lenght of String using Python
+
+------------------------------------------------------Method 1 : Length of the String using Recursion------------------------------------------------------
+
+Algorithm
+Start by passing the string to a function
+If string is empty then return 0
+Else return sum of 1 and recursive call of str[1:]
+Print the returned value by function
+
+Python Program to find Length of the String
+To Learn more about Recursion   click here
+Python Code
+Run
+def length(str):
+    if str == "":
+        return 0
+    return 1 + length(str[1:])
+
+
+str = "PrepInsta"
+print("length of", str, "is", length(str))
+
+Output :
+
+length of PrepInsta is 9
+
+------------------------------------------------------Method 2 : Using Loop------------------------------------------------------
+
+Algorithm
+Strat by passing string to the function
+Initialize a variable i = 0
+Run a while loop until string is not empty
+For each iteration increment the value of i by 1 and set the value of str to str[1:]
+Return value of i & Print
+Python Code
+Run
+def length(str):
+    i = 0
+    while str != "":
+        i += 1
+        str = str[1:]
+    return i
+
+
+str = "PrepInsta"
+print("length of", str, "is", length(str))
+Output :
+
+length of PrepInsta is 9
