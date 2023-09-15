@@ -1,0 +1,41 @@
+Here, on this page, We will learn How to Find All Subsets in Python Programming Language. If a Set of Positive Integers are Given.
+
+Find All Subsets in Python
+
+------------------------------------------------Algorithm ( Method 1 )------------------------------------------------------
+
+Create a recursive function with the following parameters, input array, current index, output array, or current subset;
+If all subsets must be stored, a vector of the array is required,
+If only the subsets must be printed, this space can be discarded.
+If the current index equals the array’s size, print the subset or output array, or insert the output array into the vector of arrays (or vectors),
+And then return.
+For very index, there are just two options.
+Ignore the current element and use the current subset and next index, I + 1, to call the recursive function.
+
+Python Code
+
+def subsetsUtil(A, subset=[], index=0):
+
+    print(*subset)
+
+    for i in range(index, len(A)):
+        subset.append(A[i])
+
+        subsetsUtil(A, subset, i + 1)
+
+        subset.pop(-1)
+    return
+
+
+array = [1, 2, 3]
+subsetsUtil(array)
+
+Output
+
+1
+1 2
+1 2 3
+1 3
+2
+2 3
+3
